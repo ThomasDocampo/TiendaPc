@@ -84,10 +84,14 @@ export default function SearchAppBar() {
             </Button>
           <Button color="inherit">Hardware</Button>
           <Button color="inherit"
-            component="div"
-            sx={{ marginLeft:2,flexGrow: 1, display: { xs: 'none', sm: 'inline' } }}>notebooks</Button>
+            >notebooks</Button>
 
-          
+<Typography
+           component="div"
+           sx={{ marginLeft:2,flexGrow: 1, display: { xs: 'none', sm: 'inline' } }}
+          >
+                 
+          </Typography>
           <CartWidget/>
           <Search>
             <SearchIconWrapper>
