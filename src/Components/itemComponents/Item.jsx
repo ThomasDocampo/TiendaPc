@@ -2,7 +2,7 @@
 import { ImageListItem } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import "../Styles/ItemStyle.css";
+
 import Button from '@mui/material/Button';
 import InfoIcon from '@mui/icons-material/Info';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -18,7 +18,9 @@ const ShowStock = () =>{
        <Typography sx = {{marginLeft:"auto", fontSize:20, marginRight:"auto",marginBottom:"auto"}}
 
        >  {product.Brand} {product.Model}  </Typography>  
-       <img src={product.image} id="ProductImage"></img> 
+       <img 
+       style = {{maxWidth: 150, height: "auto", borderRadius: 8, margin: "auto"}}
+       src={product.image} id="ProductImage"></img> 
        <Typography sx = {{marginLeft:"auto", marginRight:"auto",marginTop:"auto"}}>  {product.Specs}  </Typography>  
          <Box sx = {{display:"flex", justifyContent:"center", gap:5, marginTop:1}}>
          <Button variant="outlined"  onClick={ShowStock} startIcon={<InfoIcon />  } >

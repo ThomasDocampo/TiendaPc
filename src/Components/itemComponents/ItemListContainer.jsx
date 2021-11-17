@@ -1,7 +1,8 @@
-import GetProducts from "../HandleProducts/GetProducts";
+import GetProducts from "../../HandleProducts/GetProducts";
 import { useState, useEffect } from 'react'
+
+
 import ItemList from "./ItemList";
-import Box from '@mui/material/Box';
 
 const ItemListContainer = () => {
   const[products, SetProducts] = useState([]);
@@ -15,6 +16,7 @@ const ItemListContainer = () => {
   },[])
 
   return (
+   
       <ItemList products = {products} /> 
   );};
 export default ItemListContainer;
