@@ -5,7 +5,7 @@ const productos = [
         "Brand":"Intel",
         "Model": "i9-12900KF",
         "Specs":"16 nucleos 5.20GHZ",
-        "Descrip":"Considerado un dispositivo de alto rendimiento, la unidad en estado sólido A400 de Kingston está diseñada para las personas más exigentes. Mejora de forma notable la capacidad de respuesta de su sistema, ya que alcanza velocidades de lectura/escritura de hasta 500MB/seg y 450MB/seg. Por ende, es 10 veces más rápido que un disco duro tradicional. Al estar compuesta por una memoria flash es silenciosa y posee pocas probabilidades de tener fallas. ",
+        "Descrip":" Cantidad de núcleos   16  Cantidad de subprocesos 24   Frecuencia turbo máxima    5,20 GHz   Frecuencia de la Tecnología Intel® Turbo Boost Max 3.0 5,20 GHz",
         "Type":"procesador",
         "Price": "$574.00",
         "Stock": "3"
@@ -16,7 +16,7 @@ const productos = [
         "Brand":"Intel",
         "Model": "i7-12700KF",
         "Specs":"12 nucleos 5.00GHZ",
-        "Descrip":"Considerado un dispositivo de alto rendimiento, la unidad en estado sólido A400 de Kingston está diseñada para las personas más exigentes. Mejora de forma notable la capacidad de respuesta de su sistema, ya que alcanza velocidades de lectura/escritura de hasta 500MB/seg y 450MB/seg. Por ende, es 10 veces más rápido que un disco duro tradicional. Al estar compuesta por una memoria flash es silenciosa y posee pocas probabilidades de tener fallas. ",
+        "Descrip":"Núcleos totales: 12 N° de núcleos de rendimiento: 8 N° de núcleos eficientes: 4 Total de subprocesos: 20 Frecuencia turbo máxima: 5,00 GHz Frecuencia de la tecnología Intel Turbo Boost Max 3.0: 5,00 GHz Frecuencia turbo máxima de núcleo de rendimiento: 4,90 GHz",
         "Type":"procesador",
         "Price": "$394.00",
         "Stock": "12"
@@ -27,7 +27,7 @@ const productos = [
         "Brand":"Kingston",
         "Model": "Fury Beast DDR5",
         "Specs":"16GB 5200MHz",
-        "Descrip":"Considerado un dispositivo de alto rendimiento, la unidad en estado sólido A400 de Kingston está diseñada para las personas más exigentes. Mejora de forma notable la capacidad de respuesta de su sistema, ya que alcanza velocidades de lectura/escritura de hasta 500MB/seg y 450MB/seg. Por ende, es 10 veces más rápido que un disco duro tradicional. Al estar compuesta por una memoria flash es silenciosa y posee pocas probabilidades de tener fallas. ",
+        "Descrip":"La reinvención de las memorias Fury, las más famosas del segmento, viene de la mano de Kingston y ahora con el nombre Fury Beast. La mayor compatibilidad, versatilidad y velocidad en RAM.",
         "Type":"ram",
         "Price": "$143.00",
         "Stock": "5"
@@ -38,7 +38,7 @@ const productos = [
         "Brand":"Kingston",
         "Model": "Fury impact DDR4",
         "Specs":"16GB 2666MHz",
-        "Descrip":"Considerado un dispositivo de alto rendimiento, la unidad en estado sólido A400 de Kingston está diseñada para las personas más exigentes. Mejora de forma notable la capacidad de respuesta de su sistema, ya que alcanza velocidades de lectura/escritura de hasta 500MB/seg y 450MB/seg. Por ende, es 10 veces más rápido que un disco duro tradicional. Al estar compuesta por una memoria flash es silenciosa y posee pocas probabilidades de tener fallas. ",
+        "Descrip":"-Formato: DDR4 / UDIMM 288 Pines -Capacidad: 8 GB (1x8GB) -Velocidad: 2666 Mhz -Latencia: CL16 -Voltage: 1.2 V ",
         "Type":"ram",
         "Price": "$120.00",
 
