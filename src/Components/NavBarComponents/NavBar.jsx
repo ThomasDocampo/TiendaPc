@@ -10,6 +10,9 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import CartWidget from './CartWidget';
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -54,8 +57,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
+
 export default function SearchAppBar() {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
+
   return (
+    
     <Box sx={{ flexGrow: 1, marginBottom:5 }}>
       <AppBar position="static">
         <Toolbar>
@@ -64,17 +82,46 @@ export default function SearchAppBar() {
         >
   <Car />
 </Icon>
-          
+<Link to={`/`} style={{ textDecoration: 'none' }}>
           <Typography
             variant="h6"
             noWrap
-            sx={{ marginLeft:2, marginRight:5 }}
+            
+            sx={{ marginLeft:2, marginRight:5, color: "white"}}
           >
+            
                  DocaHard
+               
           </Typography>
+          </Link>
 
 
-         
+
+          <Button
+          color="inherit"
+        id="basic-button"
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+      Categorias
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <Link to={`/category/procesador`} style={{ textDecoration: 'none' }} > <MenuItem >  Procesadores  </MenuItem></Link>
+        <Link to={`/category/ram`} style={{ textDecoration: 'none'}} > <MenuItem >  Memorias RAM  </MenuItem></Link>
+        <Link to={`/category/almacenamiento`} style={{ textDecoration: 'none' }} > <MenuItem >  Almacenamiento  </MenuItem></Link>
+      </Menu>
+
+         {/* 
           <Button  
           color="inherit"
          
@@ -85,15 +132,17 @@ export default function SearchAppBar() {
           <Button color="inherit">Hardware</Button>
           <Button color="inherit"
             >notebooks</Button>
-
+  */}
 <Typography
            component="div"
            sx={{ marginLeft:2,flexGrow: 1, display: { xs: 'none', sm: 'inline' } }}
           >
                  
           </Typography>
+         
           <CartWidget/>
           <Search>
+          
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -103,6 +152,7 @@ export default function SearchAppBar() {
             />
           </Search>
         </Toolbar>
+       
       </AppBar>
     </Box>
   );

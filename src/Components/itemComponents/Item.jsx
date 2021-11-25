@@ -6,10 +6,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import InfoIcon from '@mui/icons-material/Info';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
 const Item = ({product}) => {
-const ShowStock = () =>{
-    alert(`El stock del producto ${product.Brand} ${product.Model} es de: ${product.stock}`);
-};
+
 
 
     return(
@@ -20,14 +19,16 @@ const ShowStock = () =>{
        >  {product.Brand} {product.Model}  </Typography>  
        <img 
        style = {{maxWidth: 150, height: "auto", borderRadius: 8, margin: "auto"}}
-       src={product.image} id="ProductImage"></img> 
+       src={product.Image} id="ProductImage"></img> 
        <Typography sx = {{marginLeft:"auto", marginRight:"auto",marginTop:"auto"}}>  {product.Specs}  </Typography>  
          <Box sx = {{display:"flex", justifyContent:"center", gap:5, marginTop:1}}>
-         <Button variant="outlined"  onClick={ShowStock} startIcon={<InfoIcon />  } >
+         <Link to={`/item/${product.Id}`} style={{ textDecoration: 'none' }}>
+         <Button variant="outlined"  startIcon={<InfoIcon />  } >
   Info
 </Button>
+</Link>
 <Button variant="contained" endIcon={<ShoppingCartIcon />}>
-  USD$ {product.price}
+  USD$ {product.Price}
 </Button>
          </Box>
        </Box> 

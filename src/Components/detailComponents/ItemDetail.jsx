@@ -6,23 +6,23 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Box } from '@mui/system';
+import { Box, shadows} from '@mui/system';
 const ItemDetail = ({item}) => {
-console.log(item.brand);
+
     return(
         
-        <Card sx={{ maxWidth: 500 , marginRight:"auto", marginLeft:"auto"}}>
+        <Card sx={{ maxWidth: 500 , marginRight:"auto", marginLeft:"auto", boxShadow:3}}>
         <CardMedia
           component="img"
-          height="300"
+          sx={{ width: 200, margin: "auto"}}
           image={item.Image}
           
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" fontSize= "8" component="div">
+          <Typography gutterBottom variant="h3" sx={{ fontSize: 22}} component="div">
            {item.Brand}  {item.Model} 
           </Typography>
-          <Typography variant="h6" >
+          <Typography variant="h4" sx={{ fontSize: 16}} >
            {item.Descrip}
           </Typography>
         </CardContent>

@@ -10,7 +10,7 @@ const ItemList = ({products}) => {
        <Box Wrap sx={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
         {products.map(product => {
            return(
-           <Item 
+           <Item id = {product.id}
            product= {product}
             />
       
