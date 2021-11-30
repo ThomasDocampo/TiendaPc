@@ -121,18 +121,6 @@ export default function SearchAppBar() {
         <Link to={`/category/almacenamiento`} style={{ textDecoration: 'none' }} > <MenuItem >  Almacenamiento  </MenuItem></Link>
       </Menu>
 
-         {/* 
-          <Button  
-          color="inherit"
-         
-          >
-            
-            Perifericos
-            </Button>
-          <Button color="inherit">Hardware</Button>
-          <Button color="inherit"
-            >notebooks</Button>
-  */}
 <Typography
            component="div"
            sx={{ marginLeft:2,flexGrow: 1, display: { xs: 'none', sm: 'inline' } }}

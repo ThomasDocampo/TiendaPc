@@ -3,11 +3,21 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Box, shadows} from '@mui/system';
+import { useEffect, useState } from "react";
+import ItemCount from '../../Components/ItemCount';
 const ItemDetail = ({item}) => {
+  const[quantity, setQuantity]= useState(0);
+  
+  useEffect(() => {
+    let msg = `You have added ${quantity} item`
+    if (quantity !== 0) {
+      quantity > 1 ? alert(msg+'s'): alert(msg);
+
+    }
+  
+   
+},[quantity])
 
     return(
         
@@ -25,17 +35,32 @@ const ItemDetail = ({item}) => {
           <Typography variant="h4" sx={{ fontSize: 16}} >
            {item.Descrip}
           </Typography>
-        </CardContent>
-        <CardActions >
-          <Box sx= {{marginLeft:2, marginRight:2,display: "flex", gap: 10}} >
-        <Button variant="contained" size= "large" endIcon={<ShoppingCartIcon />}>
-  USD$ {item.Price}
-</Button>
-<Typography variant="h5" color="text.secondary"  >
+        </CardContent >
+        <CardActions sx= {{justifyContent: 'center', display: "flex"}}>
+       
+        <ItemCount
+        stock= {item.Stock}
+         initial = {1}   
+         setQuantity = {setQuantity}
+         />
+     
+
+     
+        </CardActions>
+                <CardActions sx= {{justifyContent: 'space-around', display: "flex"}}  >
+    
+
+<Typography variant="h5" color="text.secondary"  sx = {{fontSize: 16}} >
+Price: USD{item.Price}
+           
+          </Typography>
+<Typography variant="h5" color="text.secondary"  sx = {{fontSize: 16}} >
            stock: {item.Stock}
+           
           </Typography>
 
-          </Box>
+
+   
         </CardActions>
       </Card>
     );
