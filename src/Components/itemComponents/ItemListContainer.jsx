@@ -14,7 +14,7 @@ const ItemListContainer = () => {
     GetProducts
     .then(res => {
 (id === undefined)?   SetProducts(res) :  SetProducts(res.filter((prod) => prod.Type == id.toLowerCase()));
-console.log(products.length);
+
 })
     .catch(err => console.log('error al obtener productos', err))
 
