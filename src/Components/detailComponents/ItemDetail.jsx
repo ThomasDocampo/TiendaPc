@@ -4,23 +4,31 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import ItemCount from '../../Components/ItemCount';
+import { UseCart } from '../contexts/CartProvider';
+
+
+import Button from '@mui/material/Button';
+
+
 const ItemDetail = ({item}) => {
+  const {addItem, removeItem} = UseCart();
   const[quantity, setQuantity]= useState(0);
+  
+  
   
   useEffect(() => {
     let msg = `You have added ${quantity} item`
     if (quantity !== 0) {
       quantity > 1 ? alert(msg+'s'): alert(msg);
-
-    }
-  
-   
+      addItem(item, quantity);
+      
+    } 
 },[quantity])
 
     return(
-        
+  
         <Card sx={{ maxWidth: 500 , marginRight:"auto", marginLeft:"auto", boxShadow:3}}>
         <CardMedia
           component="img"
@@ -62,7 +70,9 @@ Price: USD{item.Price}
 
    
         </CardActions>
+     
       </Card>
+ 
     );
 }
 export default ItemDetail;

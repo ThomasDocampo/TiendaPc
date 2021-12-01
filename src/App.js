@@ -2,24 +2,27 @@ import ItemDetailContainer from './Components/detailComponents/ItemDetailContain
 import ItemListContainer from './Components/itemComponents/ItemListContainer';
 import NavBar from './Components/NavBarComponents/NavBar';
 import { Routes, Route } from "react-router-dom";
+import { CartProvider } from './Components/contexts/CartProvider';
 
 function App() {
+
+  
   return (
-    <div>
+   
+    <CartProvider >
+  
      <NavBar/>
 
      <Routes>
+       
         <Route path="/" element={<ItemListContainer/>} />
         <Route path="/category/:id" element={<ItemListContainer/>} />
         <Route path="/item/:id" element={<ItemDetailContainer/>} />
      
       </Routes>
-    
-   {/* <ItemListContainer/>
-    <ItemDetailContainer/>
 
-    */} 
-    </div>
+    </CartProvider>
+ 
   );
 }
 
