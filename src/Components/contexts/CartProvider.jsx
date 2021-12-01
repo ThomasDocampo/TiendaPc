@@ -6,10 +6,7 @@ export const UseCart = () => useContext(CartContext);
 export const CartProvider = ({children}) =>{
 
     const [addedProducts, setAddedProducts] = useState([]);
-    useEffect(() => {
-        //setAddedProducts(addedProducts.filter(item => item !== undefined ))
-      console.log(addedProducts);
-      },[addedProducts])
+   
 
 
 const addItem = (item, quantity) => { 
