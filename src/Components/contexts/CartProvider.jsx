@@ -38,7 +38,7 @@ const removeItem = (id) => {
 const getTotalPrice = () => { 
  let aux = 0;
     addedProducts.map(item =>{
-aux = aux + item.item.Price;
+aux = aux + (item.item.Price * item.quantity) ;
 
     }  )
     return aux;
