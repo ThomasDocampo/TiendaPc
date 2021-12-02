@@ -3,22 +3,17 @@ import  { Component} from 'react'
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { UseCart } from '../contexts/CartProvider';
 
 
-
-export default class CartWidget extends Component {
-
-
-    render() {
+  const CartWidget = () => {
+ 
+      const {itemSumatory}= UseCart();
+      if(itemSumatory() > 0){
         return (
             <div>
-            <IconButton
-                
-              color="inherit"
-           
-              
-            >
-       <Badge badgeContent={10} color="error">
+            <IconButton color="inherit" >
+       <Badge badgeContent={itemSumatory()} color="error">
                 <ShoppingCartIcon 
                 fontSize="large"/>
               </Badge>
@@ -26,7 +21,8 @@ export default class CartWidget extends Component {
             </IconButton>
             
             </div>
-        )
+        )}else{return(
+         null   )}
     }
-}
 
+export default CartWidget;

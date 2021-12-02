@@ -127,8 +127,8 @@ export default function SearchAppBar() {
           >
                  
           </Typography>
-         
-          <CartWidget/>
+          <Link to={`/cart`} style={{ textDecoration: 'none', color: "white" }} ><CartWidget/></Link>
+
           <Search>
           
             <SearchIconWrapper>

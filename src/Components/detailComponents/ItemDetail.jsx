@@ -5,11 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {  useEffect, useState } from "react";
-import ItemCount from '../../Components/ItemCount';
+import ItemCount from '../NavBarComponents/ItemCount';
 import { UseCart } from '../contexts/CartProvider';
-
-
-import Button from '@mui/material/Button';
 
 
 const ItemDetail = ({item}) => {

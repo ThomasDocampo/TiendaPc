@@ -7,7 +7,7 @@ const productos = [
         "Specs":"16 nucleos 5.20GHZ",
         "Descrip":" Cantidad de núcleos   16  Cantidad de subprocesos 24   Frecuencia turbo máxima    5,20 GHz   Frecuencia de la Tecnología Intel® Turbo Boost Max 3.0 5,20 GHz",
         "Type":"procesador",
-        "Price": "$574.00",
+        "Price": 574.00,
         "Stock": "3"
     },
     {
@@ -18,7 +18,7 @@ const productos = [
         "Specs":"12 nucleos 5.00GHZ",
         "Descrip":"Núcleos totales: 12 N° de núcleos de rendimiento: 8 N° de núcleos eficientes: 4 Total de subprocesos: 20 Frecuencia turbo máxima: 5,00 GHz Frecuencia de la tecnología Intel Turbo Boost Max 3.0: 5,00 GHz Frecuencia turbo máxima de núcleo de rendimiento: 4,90 GHz",
         "Type":"procesador",
-        "Price": "$394.00",
+        "Price": 394.00,
         "Stock": "12"
     },
     {
@@ -29,7 +29,7 @@ const productos = [
         "Specs":"16GB 5200MHz",
         "Descrip":"La reinvención de las memorias Fury, las más famosas del segmento, viene de la mano de Kingston y ahora con el nombre Fury Beast. La mayor compatibilidad, versatilidad y velocidad en RAM.",
         "Type":"ram",
-        "Price": "$143.00",
+        "Price": 143.00,
         "Stock": "5"
     },
     {
@@ -40,7 +40,7 @@ const productos = [
         "Specs":"16GB 2666MHz",
         "Descrip":"-Formato: DDR4 / UDIMM 288 Pines -Capacidad: 8 GB (1x8GB) -Velocidad: 2666 Mhz -Latencia: CL16 -Voltage: 1.2 V ",
         "Type":"ram",
-        "Price": "$120.00",
+        "Price":120.00,
 
         "Stock": "5"
     },
@@ -52,7 +52,7 @@ const productos = [
         "Specs":"480 GB",
         "Descrip":"Considerado un dispositivo de alto rendimiento, la unidad en estado sólido A400 de Kingston está diseñada para las personas más exigentes. Mejora de forma notable la capacidad de respuesta de su sistema, ya que alcanza velocidades de lectura/escritura de hasta 500MB/seg y 450MB/seg. Por ende, es 10 veces más rápido que un disco duro tradicional. Al estar compuesta por una memoria flash es silenciosa y posee pocas probabilidades de tener fallas. ",
         "Type":"almacenamiento",
-        "Price": "$47,02",
+        "Price": 47.02,
         "Stock": "30"
     },
     {
@@ -63,7 +63,7 @@ const productos = [
         "Specs":"5800X",
         "Descrip":"AMD el procesador de 8 núcleos más rápido para el escritorio principal, con 16 hilos de procesamiento. OS Support-Windows 10 64-Bit Edition. ",
         "Type":"procesador",
-        "Price": "$340.97",
+        "Price": 340.97,
         "Stock": "22"
     },
     {
@@ -74,7 +74,7 @@ const productos = [
         "Specs":"5900X",
         "Descrip":"El mejor procesador de escritorio para juegos del mundo, con 12 núcleos y 24 hilos de procesamiento Puede ofrecer un rendimiento de élite de 100 Plus FPS en los juegos más populares del mundo. ",
         "Type":"procesador",
-        "Price": "$484.00",
+        "Price": 484.00,
         "Stock": "12"
     },
     {
@@ -85,7 +85,7 @@ const productos = [
         "Specs":"Plus Series - PCIe NVMe",
         "Descrip":"Especialmente diseñado para entusiastas de la tecnología, jugadores incondicionales y profesionales que necesitan un rendimiento incomparable y una fiabilidad superior. ",
         "Type":"almacenamiento",
-        "Price": "$54.99",
+        "Price": 54.99,
         "Stock": "8"
     },
     {
@@ -96,7 +96,7 @@ const productos = [
         "Specs":"5400 RPM, SATA 6 Gb/s, caché de 256 MB, 3,5",
         "Descrip":"Western Digital es una marca de renombre mundial en almacenamiento de datos con la cual podés crear, experimentar y guardar contenidos a través de una amplia gama de dispositivos. La alta seguridad y rendimiento que brindan sus unidades la convierten en una de las empresas más elegidas del mercado.. ",
         "Type":"almacenamiento",
-        "Price": "$69.99",
+        "Price":69.99,
         "Stock": "17"
     },
     {
@@ -107,7 +107,7 @@ const productos = [
         "Specs":"960GB",
         "Descrip":"Considerado un dispositivo de alto rendimiento, la unidad en estado sólido A400 de Kingston está diseñada para las personas más exigentes. Mejora de forma notable la capacidad de respuesta de su sistema, ya que alcanza velocidades de lectura/escritura de hasta 500MB/seg y 450MB/seg. Por ende, es 10 veces más rápido que un disco duro tradicional. Al estar compuesta por una memoria flash es silenciosa y posee pocas probabilidades de tener fallas. En su version de alta capacidad ",
         "Type":"almacenamiento",
-        "Price": "$84.99",
+        "Price":84.99,
         "Stock": "29"
     },
     {
@@ -118,7 +118,7 @@ const productos = [
         "Specs":"RGB Pro 16GB",
         "Descrip":"La memoria DDR4 de alto rendimiento ilumina tu sistema con una iluminación viva y animada de diez LED RGB ultra brillantes y direccionables individualmente por módulo. ",
         "Type":"ram",
-        "Price": "$42.99",
+        "Price": 42.99,
         "Stock": "5"
     },
     {
@@ -129,7 +129,7 @@ const productos = [
         "Specs":"DDR4 8gb",
         "Descrip":"Garantía de compatibilidad cuando se utiliza el escáner del sistema Crucial o la herramienta de asesoramiento crucial  La calidad y fiabilidad de Micron están respaldados por pruebas de nivel superior de componentes y módulos y 42 años de experiencia en memoria ",
         "Type":"ram",
-        "Price": "$28.99",
+        "Price": 28.99,
         "Stock": "15"
     }
     

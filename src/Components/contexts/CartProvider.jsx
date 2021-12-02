@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext} from 'react';
+import { createContext, useState,  useContext} from 'react';
 
 export const CartContext = createContext();
 
@@ -6,7 +6,10 @@ export const UseCart = () => useContext(CartContext);
 export const CartProvider = ({children}) =>{
 
     const [addedProducts, setAddedProducts] = useState([]);
-   
+    ///useEffect(() => {
+        //setAddedProducts(addedProducts.filter(item => item !== undefined ))
+      ///console.log(addedProducts);
+      ///},[addedProducts])
 
 
 const addItem = (item, quantity) => { 
@@ -14,32 +17,42 @@ const addItem = (item, quantity) => {
     if(insIncart(item.Id)){
      
         let index =  addedProducts.findIndex((prod) => prod.item.Id === item.Id)
-       
         let PosibleQuantity = addedProducts[index].quantity + quantity;
      
         if(PosibleQuantity < item.Stock){
             
             addedProducts[index].quantity = PosibleQuantity
     
-        }  
+        }  else{
+            alert(`El nuemero de productos (${PosibleQuantity})que estas intentando agregar supera el stock`);
+        }
     }else{
     setAddedProducts([...addedProducts,{item, quantity}]);
     
 }
 }
 const removeItem = (id) => { 
-    let index = 0;
-    addedProducts.map(product =>{
-       if(product.item.Id === id){
-        delete addedProducts[index];
-        
-        
-       } 
-       index++;
-        
-        
-    } )
-    setAddedProducts(addedProducts.filter(item => item !== undefined && item.lenght !== 0 ))
+ 
+    setAddedProducts(addedProducts.filter(item => item.item.Id !== id ))
+}
+const getTotalPrice = () => { 
+ let aux = 0;
+    addedProducts.map(item =>{
+aux = aux + item.item.Price;
+
+    }  )
+    return aux;
+}
+
+
+
+const itemSumatory = ()=>{
+    let aux = 0;
+    addedProducts.map(item =>{
+aux = aux + item.quantity;
+
+    }  )
+    return aux;
 }
 const clear = () => { 
     setAddedProducts([]);
@@ -59,7 +72,7 @@ return bool;
 
 
 return (
-    <CartContext.Provider value = {{addItem, removeItem}}>
+    <CartContext.Provider value = {{addItem, removeItem, addedProducts, getTotalPrice, itemSumatory}}>
         {children}
     </CartContext.Provider>
 )
