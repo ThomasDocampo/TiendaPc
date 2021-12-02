@@ -19,7 +19,7 @@ export default function Cart() {
   if(addedProducts.length > 0){
     return (
         <Box sx={{display: "flex", justifyContent: "center" }}>
-      <List dense sx={{ maxWidth: 700,  bgcolor: 'background.paper', border: 1 }}>
+      <List dense sx={{ maxWidth: 700,  bgcolor: 'background.paper', boxShadow: 1 }}>
         {addedProducts.map((value) => {
           const labelId = `checkbox-list-secondary-label-${value}`;
           return (
@@ -28,7 +28,7 @@ export default function Cart() {
              
               disablePadding
             >
-                <ListItemAvatar>
+                <ListItemAvatar sx={{marginLeft: 1}}>
                   <Avatar
                    sx={{ width: 70, height: 70 }}
                     src={value.item.Image}

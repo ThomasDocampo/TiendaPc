@@ -6,7 +6,7 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import Box from '@mui/material/Box';
 import { useState } from "react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
+import { Link } from "react-router-dom";
 const ItemCount = ({ stock, initial, setQuantity }) => {
 
     const [counter, setCounter] = useState(initial);
@@ -52,7 +52,13 @@ const ItemCount = ({ stock, initial, setQuantity }) => {
 
         );
       }else{
-        return(<></>);
+        return(<>
+         <Button  sx = {{maxWidth: 500, fontSize:15, marginRight: "auto", marginLeft: "auto"}}variant="contained"
+             
+             >   <Link to={`/cart`} style={{ textDecoration: 'none', color: "white" }} >
+                FINALIZAR COMPRA</Link>
+                 </Button>
+        </>);
       }
     };
  
