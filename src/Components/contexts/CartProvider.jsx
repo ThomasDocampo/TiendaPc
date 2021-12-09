@@ -72,7 +72,7 @@ return bool;
 
 
 return (
-    <CartContext.Provider value = {{addItem, removeItem, addedProducts, getTotalPrice, itemSumatory}}>
+    <CartContext.Provider value = {{addItem, removeItem, addedProducts, getTotalPrice, itemSumatory, clear}}>
         {children}
     </CartContext.Provider>
 )

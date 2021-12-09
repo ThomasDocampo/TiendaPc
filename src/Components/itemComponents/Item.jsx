@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Item = ({product}) => {
 
 
-
+if(product.Stock>0){
     return(
         
         <Box  sx = {{border:1, margin:1, padding : 1, display:"flex", flexDirection:"column",  Width:300, maxWidth: 300, minWidth: 300, borderRadius:4}}>
@@ -31,5 +31,6 @@ const Item = ({product}) => {
 </Button>
          </Box>
        </Box> 
-    )}
+    )}else{ return(null) }
+      }
     export default Item;

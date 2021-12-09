@@ -41,11 +41,6 @@ useEffect(()=>{
 const db = getFirestore();
 const itemsCollection = collection(db,"items" );
 
-
-
- 
-
-
 if(id === undefined){
 getDocs(itemsCollection).then(snapshot =>{
 
@@ -54,6 +49,8 @@ getDocs(itemsCollection).then(snapshot =>{
 }else{
   let q = query(itemsCollection , where ("Type", "==", id)) ;
   getDocs(q).then(snapshot =>{
+
+ 
     SetProducts(snapshot.docs.map((doc) =>({ id: doc.id, ...doc.data()}))); 
   })}
 },[id])
