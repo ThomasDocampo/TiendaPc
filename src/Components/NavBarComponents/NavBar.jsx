@@ -27,65 +27,65 @@ export default function SearchAppBar() {
 
 
   return (
-    
-    <Box sx={{ flexGrow: 1, marginBottom:5 }}>
+
+    <Box sx={{ flexGrow: 1, marginBottom: 5 }}>
       <AppBar position="static">
         <Toolbar>
-        <Icon
-        fontSize="large"
-        >
-  <Car />
-</Icon>
-<Link to={`/`} style={{ textDecoration: 'none' }}>
-          <Typography
-            variant="h6"
-            noWrap
-            
-            sx={{ marginLeft:2, marginRight:5, color: "white"}}
+          <Icon
+            fontSize="large"
           >
-            
-                 DocaHard
-               
-          </Typography>
+            <Car />
+          </Icon>
+          <Link to={`/`} style={{ textDecoration: 'none' }}>
+            <Typography
+              variant="h6"
+              noWrap
+
+              sx={{ marginLeft: 2, marginRight: 5, color: "white" }}
+            >
+
+              DocaHard
+
+            </Typography>
           </Link>
 
 
 
           <Button
-          color="inherit"
-        id="basic-button"
-        aria-controls="basic-menu"
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-      Categorias
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <Link to={`/category/procesador`} style={{ textDecoration: 'none' }} > <MenuItem >  Procesadores  </MenuItem></Link>
-        <Link to={`/category/ram`} style={{ textDecoration: 'none'}} > <MenuItem >  Memorias RAM  </MenuItem></Link>
-        <Link to={`/category/almacenamiento`} style={{ textDecoration: 'none' }} > <MenuItem >  Almacenamiento  </MenuItem></Link>
-      </Menu>
-
-<Typography
-           component="div"
-           sx={{ marginLeft:2,flexGrow: 1, display: { xs: 'none', sm: 'inline' } }}
+            color="inherit"
+            id="basic-button"
+            aria-controls="basic-menu"
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
           >
-                 
-          </Typography>
-          <Link to={`/cart`} style={{ textDecoration: 'none', color: "white" }} ><CartWidget/></Link>
+            Categorias
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <Link to={`/category/procesador`} style={{ textDecoration: 'none' }} > <MenuItem >  Procesadores  </MenuItem></Link>
+            <Link to={`/category/ram`} style={{ textDecoration: 'none' }} > <MenuItem >  Memorias RAM  </MenuItem></Link>
+            <Link to={`/category/almacenamiento`} style={{ textDecoration: 'none' }} > <MenuItem >  Almacenamiento  </MenuItem></Link>
+          </Menu>
 
-         
+          <Typography
+            component="div"
+            sx={{ marginLeft: 2, flexGrow: 1, display: { xs: 'none', sm: 'inline' } }}
+          >
+
+          </Typography>
+          <Link to={`/cart`} style={{ textDecoration: 'none', color: "white" }} ><CartWidget /></Link>
+
+
         </Toolbar>
-       
+
       </AppBar>
     </Box>
   );
