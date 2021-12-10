@@ -6,11 +6,7 @@ export const UseCart = () => useContext(CartContext);
 export const CartProvider = ({children}) =>{
 
     const [addedProducts, setAddedProducts] = useState([]);
-    ///useEffect(() => {
-        //setAddedProducts(addedProducts.filter(item => item !== undefined ))
-      ///console.log(addedProducts);
-      ///},[addedProducts])
-
+  
 
 const addItem = (item, quantity) => { 
     setAddedProducts(addedProducts.filter(item => item !== undefined ))
@@ -18,14 +14,8 @@ const addItem = (item, quantity) => {
      
         let index =  addedProducts.findIndex((prod) => prod.item.Id === item.Id)
         let PosibleQuantity = addedProducts[index].quantity + quantity;
-     
-        if(PosibleQuantity < item.Stock){
-            
-            addedProducts[index].quantity = PosibleQuantity
-    
-        }  else{
-            alert(`El nuemero de productos (${PosibleQuantity})que estas intentando agregar supera el stock`);
-        }
+        addedProducts[index].quantity = PosibleQuantity
+        
     }else{
     setAddedProducts([...addedProducts,{item, quantity}]);
     
@@ -63,16 +53,31 @@ const insIncart = (id) => {
     let bool = false;
     addedProducts.map(product =>{
     
-       if(product.item.Id === id)  bool = true;
+       if(product.item.Id === id) {
+        bool = true;
+       } 
       
 });
+
 return bool;
+}
+const getItemQuantity = (id) => { 
+let quant = 0
+    addedProducts.map(product =>{
+    
+       if(product.item.Id === id) {
+       
+                quant = (product.quantity)
+       }   
+});
+
+return quant
 }
 
 
 
 return (
-    <CartContext.Provider value = {{addItem, removeItem, addedProducts, getTotalPrice, itemSumatory, clear}}>
+    <CartContext.Provider value = {{addItem, removeItem, addedProducts, getTotalPrice, itemSumatory, clear, getItemQuantity, insIncart}}>
         {children}
     </CartContext.Provider>
 )

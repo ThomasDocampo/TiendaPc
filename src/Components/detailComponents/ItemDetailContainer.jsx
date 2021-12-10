@@ -1,10 +1,8 @@
 import {  useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import GetProducts from "../../HandleProducts/GetProducts";
 import ItemDetail from './ItemDetail';
-import { getFirestore, collection, getDocs, query, where, getDoc, doc } from "firebase/firestore";
-import App from '../../App';
-import { initializeApp } from '@firebase/app';
+import { getFirestore, getDoc, doc } from "firebase/firestore";
+
 const ItemDetailContainer = () => {
     const[item, setItem] = useState([]);
     
@@ -12,7 +10,7 @@ const ItemDetailContainer = () => {
    
     useEffect(() => {
       const db = getFirestore();
-const itemsCollection = collection(db,"items" );
+
 const docRef = doc(db, "items", id);
 getDoc(docRef).then((snapshot)=>{
  

@@ -7,18 +7,19 @@ import Typography from '@mui/material/Typography';
 import {  useEffect, useState } from "react";
 import ItemCount from '../NavBarComponents/ItemCount';
 import { UseCart } from '../contexts/CartProvider';
+import { Button } from '@mui/material';
 
 
 const ItemDetail = ({item}) => {
-  const {addItem, removeItem} = UseCart();
+  const {addItem} = UseCart();
   const[quantity, setQuantity]= useState(0);
   
-  
+
   
   useEffect(() => {
-    let msg = `You have added ${quantity} item`
+
     if (quantity !== 0) {
-      quantity > 1 ? alert(msg+'s'): alert(msg);
+     
       addItem(item, quantity);
       
     } 
@@ -47,6 +48,7 @@ const ItemDetail = ({item}) => {
         stock= {item.Stock}
          initial = {1}   
          setQuantity = {setQuantity}
+         id={item.Id}
          />
      
 
@@ -55,10 +57,10 @@ const ItemDetail = ({item}) => {
                 <CardActions sx= {{justifyContent: 'space-around', display: "flex"}}  >
     
 
-<Typography variant="h5" color="text.secondary"  sx = {{fontSize: 16}} >
+<Button   variant="h5" color="text.secondary"  sx = {{fontSize: 16}} >
 Price: USD{item.Price}
            
-          </Typography>
+          </Button >
 <Typography variant="h5" color="text.secondary"  sx = {{fontSize: 16}} >
            stock: {item.Stock}
            

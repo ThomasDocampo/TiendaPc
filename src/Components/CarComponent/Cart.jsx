@@ -16,25 +16,54 @@ import {  useState } from "react";
 import Alert from '@mui/material/Alert';
 import CloseIcon from '@mui/icons-material/Close';
 import Collapse from '@mui/material/Collapse';
-import { getFirestore, collection, getDocs, query, where, getDoc, doc, addDoc, setDoc} from "firebase/firestore";
-import { getDialogActionsUtilityClass } from '@mui/material';
+import { getFirestore, collection,  doc, addDoc, updateDoc} from "firebase/firestore";
+
 export default function Cart() {
  
     const {addedProducts,removeItem,getTotalPrice, clear } = UseCart();
-  const [formNombre, setFormNombre] = useState("");
-  const [formMail, setFormMail] = useState("");
-  const [formPhone, setForPhone] = useState("");
+
+    const inputs = [
+{
+  label: "nombre y apellido",
+  name: "name"
+},
+{
+  label: "correo",
+  name: "email"
+},
+{
+  label: "telefono",
+  name: "phone"
+}
+];
+
+const [formFields, setFormFields] = useState({
+  name: "",
+  email: "",
+  phone: ""
+});
+const updateDB = () => {
+  const db = getFirestore();
+
+
+    addedProducts.map((prod)=>{
+  
+      updateDoc(doc(db, "items", `${prod.item.Id}`),{Stock:prod.item.Stock - prod.quantity})
+    })
+
+
+
+}
+const onChange = (event) => {
+  setFormFields({ ...formFields, [event.target.name]: event.target.value });
+};
+  
   const [confirmation, setConfirmation] = React.useState(true);
   const [orderId, setOrderId] = useState();
  
 
-  const handleNombre = (event) => {setFormNombre (event.target.value) }
-  const handleMail = (event) => {setFormMail (event.target.value) }
-  const handlePhone = (event) => {setForPhone (event.target.value) }
   const db = getFirestore();
 const addOrderToDb = () =>{
-
-
 var date = new Date();
  
 const orderCollection = collection(db, "Orders")
@@ -43,9 +72,9 @@ const orderCollection = collection(db, "Orders")
  {
   buyer:
   {
-  name: formNombre,
-  phone: formPhone,
-  email: formMail
+  name: formFields.name,
+  phone: formFields.phone,
+  email: formFields.email
   },
   date: date,
   items:addedProducts,
@@ -60,7 +89,7 @@ const orderCollection = collection(db, "Orders")
   
   const handleFormSubmit = () => {
     addOrderToDb();
-  
+    updateDB();
     clear();
     setConfirmation(true);
    
@@ -70,10 +99,10 @@ const orderCollection = collection(db, "Orders")
     return (
       <>
       <Box sx={{display: "flex", justifyContent: "center" }}>
-        <Box sx={{display: "flex", justifyContent: "center", marginRight: 10, flexDirection: "column"}}>
+        <Box sx={{display: "flex", justifyContent: "center", marginRight: 10, flexDirection: "column", boxShadow:1}}>
       <List dense sx={{ maxWidth: 600,   bgcolor: 'background.paper', boxShadow: 1 }}>
         {addedProducts.map((value) => {
-          const labelId = `checkbox-list-secondary-label-${value}`;
+         
           return (
             <ListItem
               key={value.item.Id}
@@ -129,35 +158,23 @@ Precio total: USD $
       <Box sx = {{ marginRight : 10}}>
       <FormControl sx = {{ position: "fixed"}}>
 
-     
+     {inputs.map(({name, label})=>(
+
+
 <TextField
           id="outlined-textarea"
-          label="Nombre y Apellido"
-          value = {formNombre}
-          onChange = {handleNombre}
+          label={label}
+          value = {formFields[name]}
+          name={name}
+          onChange = {onChange}
           sx={{ margin: 2 }}
      
-        />
-        <TextField
-        sx={{ margin: 2 }}
-          id="outlined-textarea"
-          label="Mail"
-          value = {formMail}
-          onChange = {handleMail}
-     
-        />
-        <TextField
-         sx={{ margin: 2 }}
-          id="outlined-textarea"
-          value = {formPhone}
-          label="Celular"
+        />))}
+
         
-          onChange = {handlePhone}
-         
-        />
  <Button 
          onClick = {handleFormSubmit}
-         >enviar</Button>  
+         >realizar orden </Button>  
 </FormControl>
 </Box>
  </Box>
@@ -184,23 +201,26 @@ Precio total: USD $
                  IR AL LISTADO DE PRODUCTOS</Link>
                  </Button>  
                  <Collapse in={confirmation} sx={{marginTop: 10, maxWidth: 800, marginRight: "auto", marginLeft: "auto"}}>
-        <Alert
-          action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={() => {
-                setConfirmation(false);
-              }}
-            >
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }
-          sx={{ mb: 2 }}
-        >
-         Su orden fue ejecutada con exito, el numero de orden es {orderId}
-        </Alert>
+                 {orderId !== undefined &&
+       <Alert
+       action={
+         <IconButton
+           aria-label="close"
+           color="inherit"
+           size="small"
+           onClick={() => {
+             setConfirmation(false);
+           }}
+         >
+           <CloseIcon fontSize="inherit" />
+         </IconButton>
+       }
+       sx={{ mb: 2 }}
+     >
+      Su orden fue ejecutada con exito, el numero de orden es {orderId}
+     </Alert>
+      }      
+        
       </Collapse>  
      
         </Box>
